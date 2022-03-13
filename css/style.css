@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'ACCchildrenheartOTF-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenheartOTF-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    text-align: center;
+    font-family: 'ACCchildrenheartOTF-Regular';
+}
+
+.hidden {
+    display: none;
+}
+
+.dateclock {
+    margin: 1vh;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#login-input {
+    width: 20vw;
+    height: 5vh;
+
+    font-family: 'ACCchildrenheartOTF-Regular';
+    font-size: 20px;
+}
+
+#login-btn {
+    width: 5vw;
+    height: 5vh;
+
+    font-family: 'ACCchildrenheartOTF-Regular';
+    font-size: 20px;
+}
+
+#login-btn:hover {
+    cursor: pointer;
+}
+
+#greeting {
+    margin: 10vh 0 5vh 0;
+    font-size: 72px;
+    font-weight: bolder;
+}
+
+#quote {
+    font-size: 20px;
+    font-style: italic;
+}

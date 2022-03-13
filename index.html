@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Title Test</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Have a Nice Day :)</title>
 </head>
 <body>
-</body>
     <form id="login-form" class="hidden">
         <input
+            id="login-input"
             required
             maxlength = "15"
             type="text"
             placeholder="what is your name?" 
         />
-        <button>Log In</button>
+        <button id="login-btn">Log In</button>
     </form>
-    <h1 id="greeting" class="hidden"></h1>
-    <script src="App.js"></script>
+    <span id="greeting" class="hidden"></span>
+    <h2 id="date" class="dateclock">January 1, 2022</h2> 
+    <h2 id="clock" class="dateclock">00:00:00</h2>
+    <div id="quote">
+        <p></p>
+        <p></p>
+    </div>
+    <script src="js/greeting.js"></script>
+    <script src="js/dateclock.js"></script>
+    <script src="js/quote.js"></script>
+    <script src="js/background.js"></script>
 </body>
 </html>
