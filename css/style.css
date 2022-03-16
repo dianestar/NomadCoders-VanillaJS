@@ -84,3 +84,15 @@ body {
 #todo-list {
     font-size: 20px;
 }
+
+#weather-div {
+    position: absolute;
+    top: 10vh;
+    left: 5vw;
+    text-align: left;
+}
+
+#weather-list {
+    list-style: none;
+    font-size: 20px;
+}
