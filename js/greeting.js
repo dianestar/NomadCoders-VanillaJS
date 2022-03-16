@@ -1,13 +1,15 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const greetingDiv = document.querySelector("#greeting-div");
 const greeting = document.querySelector("#greeting");
+const editBtn = document.querySelector("#edit-btn");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "userName";
 
 function paintGreeting(userName) {
     greeting.innerText = `Hello ${userName}`;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    greetingDiv.classList.remove(HIDDEN_CLASSNAME);
 }
 
 function onLoginSubmit(event) {
@@ -36,3 +38,12 @@ else {
     // greeting 보이기
     paintGreeting(savedUserName);
 }
+
+function onLogoutClick() {
+    greetingDiv.classList.add(HIDDEN_CLASSNAME); 
+
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    localStorage.removeItem(USERNAME_KEY);
+}
+
+editBtn.addEventListener("click", onLogoutClick);

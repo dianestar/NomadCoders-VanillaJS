@@ -36,9 +36,11 @@ body {
 #login-input {
     width: 20vw;
     height: 5vh;
+    margin: 10vh 0 5vh 0;
 
     font-family: 'ACCchildrenheartOTF-Regular';
     font-size: 20px;
+    text-align: center;
 }
 
 #login-btn {
@@ -53,10 +55,19 @@ body {
     cursor: pointer;
 }
 
-#greeting {
+#greeting-div {
     margin: 10vh 0 5vh 0;
     font-size: 72px;
     font-weight: bolder;
+}
+
+#edit-btn {
+    font-family: 'ACCchildrenheartOTF-Regular';
+    color: white;
+    background-color: black;
+    opacity: 0.25;
+    border: none;
+    cursor: pointer;
 }
 
 #quote {
