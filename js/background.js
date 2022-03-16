@@ -1,5 +1,5 @@
 const images = [
-    "1.jpg", "2.jpg", "3.jpg", "4.jpg"
+    "1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG"
 ];
 
 const randomImage = images[Math.floor(Math.random() * images.length)];

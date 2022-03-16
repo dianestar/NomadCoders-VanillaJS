@@ -25,6 +25,7 @@ function paintTodo(todoObj) {
     const button = document.createElement("button");
 
     li.id = todoObj.id;
+    li.style = "margin:1vh";
     span.innerText = todoObj.content;
     button.innerText = "❌";
     button.className = "delete-btn";

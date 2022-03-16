@@ -37,7 +37,7 @@ function onGeoValid(position) {
 
 function onGeoInvalid() {
     const weather = document.createElement("li");
-    weather.innerText = `Unable to find your location 😥\nWe need your location info\nto provide weather forecast 🚨`;
+    weather.innerText = `Unable to find your location 🚨\nWe need your location info\nto provide weather forecast`;
     weatherList.appendChild(weather);
 }
 
