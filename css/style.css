@@ -27,10 +27,17 @@ body {
     font-weight: bold;
 }
 
-.delete-btn {
+.todo-btn {
     border: none;
-    cursor: pointer;
     background-color: transparent;
+}
+
+.todo-btn:hover {
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
 }
 
 #login-input {
@@ -38,21 +45,18 @@ body {
     height: 5vh;
     margin: 10vh 0 5vh 0;
 
+    background: transparent;
+    border: none;
+    border-bottom: black solid;
+    outline: none;
+
     font-family: 'ACCchildrenheartOTF-Regular';
     font-size: 20px;
     text-align: center;
 }
 
 #login-btn {
-    width: 5vw;
-    height: 5vh;
-
-    font-family: 'ACCchildrenheartOTF-Regular';
-    font-size: 20px;
-}
-
-#login-btn:hover {
-    cursor: pointer;
+    display: none;
 }
 
 #greeting-div {
@@ -61,12 +65,15 @@ body {
     font-weight: bolder;
 }
 
-#edit-btn {
+#logout-btn {
     font-family: 'ACCchildrenheartOTF-Regular';
     color: white;
     background-color: black;
     opacity: 0.25;
     border: none;
+}
+
+#logout-btn:hover{
     cursor: pointer;
 }
 
@@ -93,6 +100,11 @@ body {
 #todo-input {
     width: 16vw;
     height: 4vh;
+
+    background: transparent;
+    border: none;
+    border-bottom: black solid;
+    outline: none;
 
     font-family: 'ACCchildrenheartOTF-Regular';
     font-size: 16px;

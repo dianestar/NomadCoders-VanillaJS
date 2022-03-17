@@ -2,7 +2,7 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greetingDiv = document.querySelector("#greeting-div");
 const greeting = document.querySelector("#greeting");
-const editBtn = document.querySelector("#edit-btn");
+const logoutBtn = document.querySelector("#logout-btn");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "userName";
@@ -40,10 +40,18 @@ else {
 }
 
 function onLogoutClick() {
-    greetingDiv.classList.add(HIDDEN_CLASSNAME); 
+    const yesOrNo = confirm(`Do you really want to LOG OUT?\n🚨 Things You Will Lose: Name Info, To Do List`);
+    if (yesOrNo) {
+        greetingDiv.classList.add(HIDDEN_CLASSNAME); 
 
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
-    localStorage.removeItem(USERNAME_KEY);
+        loginInput.value = "";
+        loginForm.classList.remove(HIDDEN_CLASSNAME);
+        localStorage.removeItem(USERNAME_KEY);
+
+        localStorage.removeItem(TODOS_KEY);
+
+        window.location.reload();
+    }
 }
 
-editBtn.addEventListener("click", onLogoutClick);
+logoutBtn.addEventListener("click", onLogoutClick);

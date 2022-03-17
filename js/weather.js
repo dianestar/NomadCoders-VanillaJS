@@ -42,3 +42,4 @@ function onGeoInvalid() {
 }
 
 navigator.geolocation.getCurrentPosition(onGeoValid, onGeoInvalid);
+document.querySelector("#login-input").focus();

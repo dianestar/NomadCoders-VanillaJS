@@ -10,41 +10,71 @@ function saveTodos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
 
+function checkToDo(e) {
+    const li = e.target.parentElement;
+    li.children[0].classList.toggle("done");
+    
+    todos.forEach((todo) => {
+        if (todo.id === parseInt(li.id)) {
+            todo.done = todo.done ? 0 : 1;
+            saveTodos();
+        }
+    })
+}
+
 function deleteTodo(e) {
     const li = e.target.parentElement;
+    
+    const deleteOrNot = confirm(`Are You Sure To Delete 👉 ${li.children[0].innerText}?`);
+    if (deleteOrNot) {
+        todos = todos.filter((todo) => todo.id !== parseInt(li.id));
+        saveTodos();
 
-    todos = todos.filter((todo) => todo.id !== parseInt(li.id));
-    saveTodos();
-
-    li.remove();
+        li.remove();
+    }
 }   
 
 function paintTodo(todoObj) {
     const li = document.createElement("li");
     const span = document.createElement("span");
-    const button = document.createElement("button");
+    const checkBtn = document.createElement("button");
+    const deleteBtn = document.createElement("button");
 
     li.id = todoObj.id;
     li.style = "margin:1vh";
+    
     span.innerText = todoObj.content;
-    button.innerText = "❌";
-    button.className = "delete-btn";
-    button.addEventListener("click", deleteTodo);
+    if (todoObj.done) { span.classList.add("done"); }
+
+    checkBtn.innerText = "✅";
+    checkBtn.className = "todo-btn";
+    checkBtn.addEventListener("click", checkToDo);
+
+    deleteBtn.innerText = "❌";
+    deleteBtn.className = "todo-btn";
+    deleteBtn.addEventListener("click", deleteTodo);
 
     li.appendChild(span);
-    li.appendChild(button);
+    li.appendChild(checkBtn);
+    li.appendChild(deleteBtn);
     todoList.appendChild(li);
 }
 
 function onTodoSubmit(e) {
     e.preventDefault();
+
+    if (localStorage.getItem(USERNAME_KEY) === null) {
+        alert("Please set your name and LOG IN first to save a To Do 👀");
+        return;
+    }
     
     const todo = todoInput.value;
     todoInput.value = "";
 
     const todoObj = {
         id: Date.now(),
-        content: todo
+        content: todo,
+        done: 0
     };
     todos.push(todoObj);
     saveTodos();
